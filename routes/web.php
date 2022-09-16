@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PetaController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UploadController;
 use App\Kecamatan;
 use Illuminate\Support\Facades\Route;
@@ -28,3 +29,5 @@ Route::post('/upload', [UploadController::class, 'store']);
 Route::get('/peta/{kecamatan}', [PetaController::class, 'show']);
 
 Route::post('/catatan', [PetaController::class, 'storeCatatan'])->name('catatan.store');
+
+Route::get('login', [LoginController::class, 'index']);
