@@ -23,11 +23,19 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/upload', [UploadController::class, 'index']);
-Route::post('/upload', [UploadController::class, 'store']);
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::post('login', [LoginController::class, 'authenticate']);
+Route::post('logout', [LoginController::class, 'logout']);
 
-Route::get('/peta/{kecamatan}', [PetaController::class, 'show']);
 
-Route::post('/catatan', [PetaController::class, 'storeCatatan'])->name('catatan.store');
+Route::group(['middleware' => ['auth']], function (){
+    Route::get('/upload', [UploadController::class, 'index']);
+    Route::post('/upload', [UploadController::class, 'store']);
 
-Route::get('login', [LoginController::class, 'index']);
+    Route::get('/peta/{kecamatan}', [PetaController::class, 'show']);
+
+    Route::post('/catatan', [PetaController::class, 'storeCatatan'])->name('catatan.store');
+});
+
+
+
