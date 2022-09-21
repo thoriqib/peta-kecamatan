@@ -6,7 +6,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div>
-          <a href="/" class="d-block"><i class="fas fa-map"></i> Peta Kecamatan Kota Bandung</a>
+          <a href="/" class="d-block"><i class="fas fa-map"></i> SLS-3273</a>
         </div>
       </div>
 
