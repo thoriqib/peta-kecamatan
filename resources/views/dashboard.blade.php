@@ -38,7 +38,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Upload</h1>
+            <h1 class="m-0">Dashboard</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -48,29 +48,42 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-
-        @if ($message = Session::get('error'))
-          <div class="alert alert-danger alert-block my-2">
-              <button type="button" class="close" data-dismiss="alert">×</button>    
-              <strong>{{ $message }}</strong>
+        <div class="row">
+          <div class="col-lg-4 col-12">
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>30</h3>
+                <p>Kecamatan</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+            </div>
           </div>
-        @endif
-        <div class="card">
-            <form action="/upload" method="post" enctype="multipart/form-data" class="m-3">
-                @csrf
-                <label for="kecamatan_id">Kecamatan</label>
-                <select name="kecamatan_id" class="form-control mb-3" aria-label="Pilih Kecamatan" id="kecamatan_id">
-                  <option selected>-- Pilih Kecamatan --</option>
-                  @foreach ($data_kec as $k)
-                  <option value="{{$k->id}}">{{$k->nama}}</option>
-                  @endforeach
-                </select>
-                
-                <label for="image">Gambar</label>
-                <input type="file" class="form-control mb-3" id="image" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-
-                <button class="btn btn-primary float-right my-2" type="submit">Upload</button>
-            </form>
+          
+          <div class="col-lg-4 col-12">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>151</h3>
+                <p>Kelurahan</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-12">
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>44</h3>
+                <p>SLS</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+            </div>
+          </div>        
         </div>
       </div>
       <!-- /.container-fluid -->

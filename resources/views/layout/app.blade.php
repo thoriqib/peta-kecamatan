@@ -60,7 +60,7 @@
                         <strong>{{ $message }}</strong>
                     </div>
                   @endif
-                  <div class="row">
+                  {{-- <div class="row">
                     <form action="">
                       <div class="form-group">
                         <label for="kelurahan">Kelurahan</label>
@@ -72,7 +72,7 @@
                         </select>
                       </div>
                     </form>
-                  </div>  
+                  </div>   --}}
                     <div class="row">
                         <div class="col">
                             <div id="map"></div>
@@ -116,6 +116,8 @@
               maxWidth: "auto"
             })
           });
+
+          L.Control.geocoder().addTo(map);
         </script>
         <!-- jQuery -->
         <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>

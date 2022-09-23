@@ -11,7 +11,7 @@ class UploadController extends Controller
     public function index()
     {
         return view('upload', [
-            'data_kec' => Kecamatan::all()
+            'data_kec' => Kecamatan::orderBy('nama')->get()
         ]);
     }
 
@@ -47,9 +47,9 @@ class UploadController extends Controller
     function gps2Num($coordPart){
         $parts = explode('/', $coordPart);
         if(count($parts) <= 0)
-        return 0;
+            return 0;
         if(count($parts) == 1)
-        return $parts[0];
+            return $parts[0];
         return floatval($parts[0]) / floatval($parts[1]);
     }
 

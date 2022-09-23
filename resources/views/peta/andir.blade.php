@@ -8,6 +8,7 @@
                 height: 400px;
             }
             </style>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         @endsection
         
         @section('script-peta')
@@ -21,6 +22,7 @@
             <script src="{{asset('asset_peta/andir/js/labelgun.min.js')}}"></script>
             <script src="{{asset('asset_peta/andir/js/labels.js')}}"></script>
             <script src="{{asset('asset_peta/andir/data/kdkec_180_1.js')}}"></script>
+            <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
             <script>
             var highlightLayer;
             function highlightFeature(e) {

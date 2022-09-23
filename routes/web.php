@@ -18,8 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index', [
-        'data_kec' => Kecamatan::all()
+    return view('index');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard', [
+        'data_kec' => Kecamatan::orderBy('nama')->get()
     ]);
 });
 
