@@ -21,7 +21,21 @@
             <div class="container">
                 <a class="navbar-brand" href="/">SLS-3273</a>
                 @auth
-                    Selamat Datang, {{auth()->user()->name}}
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Selamat Datang, {{auth()->user()->name}}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <button class="dropdown-item" type="submit">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 @else
                     <a class="btn btn-primary" href="/login">LOGIN</a>
                 @endauth
@@ -34,25 +48,16 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Pencarian</h1>
-                            <!-- Signup form-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form class="form-subscribe" id="searchForm">
-                                <!-- Email address input-->
+                            <h1 class="mb-5">SLS-3273</h1>
+                            {{-- <form class="form-subscribe" id="searchForm">
                                 <div class="row">
                                     <div class="col">
                                         <input class="form-control form-control-lg" id="search" type="text" placeholder="Cari Wilayah..."/>
-                                        {{-- <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div> --}}
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
                                     </div>
                                     <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
                                 </div>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>

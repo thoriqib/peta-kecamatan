@@ -21,18 +21,17 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard', [
-        'data_kec' => Kecamatan::orderBy('nama')->get()
-    ]);
-});
-
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'authenticate']);
 Route::post('logout', [LoginController::class, 'logout']);
 
 
 Route::group(['middleware' => ['auth']], function (){
+    Route::get('/dashboard', function () {
+        return view('dashboard', [
+            'data_kec' => Kecamatan::orderBy('nama')->get()
+        ]);
+    })->name('dashboard');
     Route::get('/upload', [UploadController::class, 'index']);
     Route::post('/upload', [UploadController::class, 'store']);
 

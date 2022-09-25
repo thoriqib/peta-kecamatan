@@ -2,6 +2,7 @@
         @section('style-peta')
         <link rel="stylesheet" href="{{asset('asset_peta/astana_anyar/css/leaflet.css')}}">
         <link rel="stylesheet" href="{{asset('asset_peta/astana_anyar/css/qgis2web.css')}}"><link rel="stylesheet" href="{{asset('asset_peta/astana_anyar/css/fontawesome-all.min.css')}}">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         @endsection
         @section('script-peta')
         <script src="{{asset('asset_peta/astana_anyar/js/qgis2web_expressions.js')}}"></script>
@@ -14,6 +15,7 @@
         <script src="{{asset('asset_peta/astana_anyar/js/labelgun.min.js')}}"></script>
         <script src="{{asset('asset_peta/astana_anyar/js/labels.js')}}"></script>
         <script src="{{asset('asset_peta/astana_anyar/data/kdkec_050_1.js')}}"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {

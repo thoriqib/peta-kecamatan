@@ -3,7 +3,8 @@
         <link rel="stylesheet" href="{{asset('asset_peta/babakan_ciparay/css/leaflet.css')}}">
         <link rel="stylesheet" href="{{asset('asset_peta/babakan_ciparay/css/qgis2web.css')}}"><link rel="stylesheet" href="{{asset('asset_peta/babakan_ciparay/css/fontawesome-all.min.css')}}">
         <link rel="stylesheet" href="{{asset('asset_peta/babakan_ciparay/css/filter.css')}}">
-        <link rel="stylesheet" href="{{asset('css/nouislider.min.css')}}">
+        <link rel="stylesheet" href="{{asset('asset_peta/babakan_ciparay/css/nouislider.min.css')}}">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         @endsection
 
         @section('script-peta')
@@ -20,6 +21,7 @@
         <script src="{{asset('asset_peta/babakan_ciparay/js/nouislider.min.js')}}"></script>
         <script src="{{asset('asset_peta/babakan_ciparay/js/wNumb.js')}}"></script>
         <script src="{{asset('asset_peta/babakan_ciparay/data/kdkec_020_1.js')}}"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {

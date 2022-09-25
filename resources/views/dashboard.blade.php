@@ -49,7 +49,7 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-4 col-12">
+          <div class="col-lg-6 col-12">
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>30</h3>
@@ -61,7 +61,7 @@
             </div>
           </div>
           
-          <div class="col-lg-4 col-12">
+          <div class="col-lg-6 col-12">
             <div class="small-box bg-success">
               <div class="inner">
                 <h3>151</h3>
@@ -72,18 +72,7 @@
               </div>
             </div>
           </div>
-          
-          <div class="col-lg-4 col-12">
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-                <p>SLS</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>        
+             
         </div>
       </div>
       <!-- /.container-fluid -->

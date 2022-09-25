@@ -22,10 +22,12 @@
               Selamat Datang, {{auth()->user()->name}}
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <form action="/logout" method="post">
-                  @csrf
-                  <button class="dropdown-item" type="submit">Logout</button>
-                </form>
+              <div><a class="dropdown-item" href="/">Home</a></div>
+              <div><hr class="dropdown-divider"></div>
+              <form action="/logout" method="post">
+                @csrf
+                <button class="dropdown-item" type="submit">Logout</button>
+              </form>
             </div>
         </li>
       @else

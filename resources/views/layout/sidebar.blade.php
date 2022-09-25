@@ -14,7 +14,7 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item"><a class="nav-link" href="dashboard"><i class="nav-icon fas fa-tachometer-alt"></i>Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link @if(Route::is('dashboard')) active @endif" href="/dashboard"><i class="nav-icon fas fa-tachometer-alt"></i>Dashboard</a></li>
             <li class="nav-header">Kecamatan</li>
             @foreach ($data_kec as $k)
               @isset($data)
