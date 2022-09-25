@@ -18,16 +18,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index', [
-        'data_kec' => Kecamatan::all()
-    ]);
+    return view('index');
 });
 
-Route::get('/upload', [UploadController::class, 'index']);
-Route::post('/upload', [UploadController::class, 'store']);
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::post('login', [LoginController::class, 'authenticate']);
+Route::post('logout', [LoginController::class, 'logout']);
 
-Route::get('/peta/{kecamatan}', [PetaController::class, 'show']);
 
-Route::post('/catatan', [PetaController::class, 'storeCatatan'])->name('catatan.store');
+Route::group(['middleware' => ['auth']], function (){
+    Route::get('/dashboard', function () {
+        return view('dashboard', [
+            'data_kec' => Kecamatan::orderBy('nama')->get()
+        ]);
+    })->name('dashboard');
+    Route::get('/upload', [UploadController::class, 'index']);
+    Route::post('/upload', [UploadController::class, 'store']);
 
-Route::get('login', [LoginController::class, 'index']);
+    Route::get('/peta/{kecamatan}', [PetaController::class, 'show']);
+
+    Route::post('/catatan', [PetaController::class, 'storeCatatan'])->name('catatan.store');
+});
+
+
+

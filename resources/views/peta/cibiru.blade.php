@@ -3,7 +3,8 @@
         <link rel="stylesheet" href="{{asset('asset_peta/cibiru/css/leaflet.css')}}">
         <link rel="stylesheet" href="{{asset('asset_peta/cibiru/css/qgis2web.css')}}"><link rel="stylesheet" href="{{asset('asset_peta/cibiru/css/fontawesome-all.min.css')}}">
         <link rel="stylesheet" href="{{asset('asset_peta/cibiru/css/filter.css')}}">
-<link rel="stylesheet" href="{{asset('asset_peta/cibiru/css/nouislider.min.css')}}">
+        <link rel="stylesheet" href="{{asset('asset_peta/cibiru/css/nouislider.min.css')}}">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         @endsection
 
         @section('script-peta')
@@ -20,6 +21,7 @@
         <script src="{{asset('asset_peta/cibiru/js/nouislider.min.js')}}"></script>
         <script src="{{asset('asset_peta/cibiru/js/wNumb.js')}}"></script>
         <script src="{{asset('asset_peta/cibiru/data/kdkec_110_1.js')}}"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {

@@ -58,15 +58,17 @@
         <div class="card">
             <form action="/upload" method="post" enctype="multipart/form-data" class="m-3">
                 @csrf
-                <select name="kecamatan_id" class="form-control my-2" aria-label="Default select example">
-                    <option selected>-- Pilih Kecamatan --</option>
-                    @foreach ($data_kec as $k)
-                        <option value="{{$k->id}}">{{$k->nama}}</option>
-                    @endforeach
+                <label for="kecamatan_id">Kecamatan</label>
+                <select name="kecamatan_id" class="form-control mb-3" aria-label="Pilih Kecamatan" id="kecamatan_id">
+                  <option selected>-- Pilih Kecamatan --</option>
+                  @foreach ($data_kec as $k)
+                  <option value="{{$k->id}}">{{$k->nama}}</option>
+                  @endforeach
                 </select>
-                <div class="input-group my-2">
-                    <input type="file" class="form-control" id="image" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                </div>
+                
+                <label for="image">Gambar</label>
+                <input type="file" class="form-control mb-3" id="image" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+
                 <button class="btn btn-primary float-right my-2" type="submit">Upload</button>
             </form>
         </div>
@@ -85,11 +87,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
+    <strong>Copyright &copy; 2022 <a href="https://bandungkota.bps.go.id/">Badan Pusat Statistik Kota Bandung</a>.</strong>
   </footer>
 </div>
 <!-- ./wrapper -->

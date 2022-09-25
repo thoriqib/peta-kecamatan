@@ -59,7 +59,20 @@
                         <button type="button" class="close" data-dismiss="alert">×</button>    
                         <strong>{{ $message }}</strong>
                     </div>
-                  @endif  
+                  @endif
+                  {{-- <div class="row">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="kelurahan">Kelurahan</label>
+                        <select class="custom-select form-control-border border-width-2" id="kelurahan">
+                          <option value="" selected>--- Semua Kelurahan ---</option>
+                          @foreach ($data_kel as $kel)
+                            <option value={{$kel->id}}>{{$kel->name}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </form>
+                  </div>   --}}
                     <div class="row">
                         <div class="col">
                             <div id="map"></div>
@@ -103,6 +116,8 @@
               maxWidth: "auto"
             })
           });
+
+          L.Control.geocoder().addTo(map);
         </script>
         <!-- jQuery -->
         <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>

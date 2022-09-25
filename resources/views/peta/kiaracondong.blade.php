@@ -15,6 +15,7 @@
         <script src="{{asset('asset_peta/kiaracondong/js/labelgun.min.js')}}"></script>
         <script src="{{asset('asset_peta/kiaracondong/js/labels.js')}}"></script>
         <script src="{{asset('asset_peta/kiaracondong/data/kdkec_150_1.js')}}"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
